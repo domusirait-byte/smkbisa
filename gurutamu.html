@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metronics Medan - Pusat Pelatihan & Jaminan Kerja</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #002D5B; /* Navy Profesional */
+            --accent-color: #00D1B2;  /* Hijau Toska Modern */
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f8f9fa;
+        }
+
+        /* --- NAVBAR STYLING --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-brand img { height: 40px; }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--primary-color) !important;
+            padding: 10px 20px !important;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover Effect for Desktop */
+        @media (min-width: 992px) {
+            .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            .dropdown-menu {
+                display: block;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(15px);
+                transition: all 0.3s ease;
+                border: none;
+                border-radius: 12px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.12); /* Shadow Melayang */
+                padding: 15px;
+                min-width: 280px;
+            }
+        }
+
+        /* Dropdown Item Styling */
+        .dropdown-item {
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .dropdown-item i {
+            font-size: 1.2rem;
+            margin-right: 12px;
+            color: var(--accent-color);
+        }
+
+        .dropdown-item:hover {
+            background-color: #f0f7f6;
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(0,45,91,0.9) 0%, rgba(0,45,91,0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .btn-main {
+            background-color: var(--accent-color);
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 209, 178, 0.3);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 991px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .dropdown-menu {
+                border: 1px solid #eee;
+                box-shadow: none;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--  AWAL SECTION  ------------------------------------1 NAVBAR-->
+    <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: var(--primary-color);">
+    <img src="img/iconlogo.png" alt="Logo" class="nav-logo me-2">
+    <span>METRONICS</span>
+</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#">Program Jaminan Kerja</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="adminmodern.html"><i class="bi bi-robot"></i> Admin Modern & AI</a></li>
+                        <li><a class="dropdown-item" href="Teknisi.html"><i class="bi bi-tools"></i> Teknisi Laptop & Komputer</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#">Layanan SMK</a>
+                    <ul class="dropdown-menu border-top-accent">
+                        <li><a class="dropdown-item" href="prakrin.html"><i class="bi bi-briefcase"></i> Program Prakerin (PKL)</a></li>
+                        <li><a class="dropdown-item" href="gurutamu.html"><i class="bi bi-person-video3"></i> Guru Tamu Industri</a></li>
+                        <li><a class="dropdown-item" href="Pengawas.html"><i class="bi bi-patch-check"></i> Pengawas Eksternal UKK</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#">Kursus Reguler</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="fbads.html"><i class="bi bi-facebook"></i> Facebook Ads</a></li>
+                        <li><a class="dropdown-item" href="webai.html"><i class="bi bi-code-slash"></i> Web Design AI</a></li>
+                        <li><a class="dropdown-item" href="content.html"><i class="bi bi-camera-reels"></i> Content Creator</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item"><a class="nav-link" href="berita.html">Berita</a></li>
+            </ul>
+            <div class="ms-lg-3">
+                <a href="#" class="btn btn-main">Daftar Sekarang</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<!--  AKHIR SECTION  ------------------------------------1 NAVBAR-->
+<!--  AWAL SECTION  ------------------------------------2 HERO-->
+
+<!--  AKHIR SECTION----------------------------------- 2 HEROr-->
+
+<!--  AWAL SECTION  ------------------------------------33333 HERO-->
+  
+<!--  AKHIR SECTION----------------------------------- 3333333 HEROr-->
+
+<!--  AWAL SECTION  ------------------------------------444444 HERO-->
+  
+<!--  AKHIR SECTION----------------------------------- 4444444 HEROr-->
+
+<!--  AWAL SECTION  ------------------------------------5555555 HERO-->
+  
+<!--  AKHIR SECTION----------------------------------- 55555555 HEROr-->
+
+<!--  AWAL SECTION  ------------------------------------6666666 HERO-->
+  
+<!--  AKHIR SECTION----------------------------------- 66666666 HEROr-->
+
+<!--  AWAL SECTION  ------------------------------------777777777 HERO-->
+  
+<!--  AKHIR SECTION----------------------------------- 77777777777 HEROr-->
+
+<!--  SECTION 8 Footer -->
+<footer class="pt-5 pb-3" style="background-color: #0a192f; color: #ffffff;">
+    <div class="container">
+        <div class="row g-4 mb-5">
+            
+            <div class="col-lg-4">
+                <h4 class="fw-bold mb-4 text-white">METRONICS</h4>
+                <p class="opacity-75 mb-4" style="font-size: 0.9rem; line-height: 1.8;">
+                    LEMBAGA PELATIHN UNGGULAN DI MEDAN.<br>
+                    DILATIH - PUNYA SKILL - DI SALURKAN KERJA
+                </p>
+                <div class="d-flex align-items-start mb-3">
+                    <i class="bi bi-geo-alt-fill me-3 text-info"></i>
+                    <a href="https://maps.app.goo.gl/Ne64CpDKuHkAJhiJ8" target="_blank" class="text-decoration-none text-white opacity-75 small">
+                        Jl. Air Bersih Ujung No.22A, Kota Medan, Sumatera Utara
+                    </a>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-whatsapp me-3 text-info"></i>
+                    <p class="small mb-0 opacity-75">0813-7536-6633</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+                <h6 class="fw-bold mb-4 text-white">Program</h6>
+                <ul class="list-unstyled footer-links">
+                    <li class="mb-2"><a href="adminmodern.html" class="text-decoration-none">Admin Modern & AI</a></li>
+                    <li class="mb-2"><a href="Teknisi.html" class="text-decoration-none">Teknisi Laptop</a></li>
+                    <li class="mb-2"><a href="reguler.html" class="text-decoration-none">Kelas Reguler</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+                <h6 class="fw-bold mb-4 text-white">Mitra SMK</h6>
+                <ul class="list-unstyled footer-links">
+                    <li class="mb-2"><a href="prakrin.html" class="text-decoration-none">Prakerin (PKL)</a></li>
+                    <li class="mb-2"><a href="gurutamu.html" class="text-decoration-none">Guru Tamu</a></li>
+                    <li class="mb-2"><a href="Pengawas.html" class="text-decoration-none">Pengawas UKK</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+                <h6 class="fw-bold mb-4 text-white">Ikuti Kami & Lokasi</h6>
+                <div class="d-flex gap-3 mb-4">
+                    <a href="https://www.instagram.com/metronics_medan/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+                    <a href="https://web.facebook.com/metronics.medan" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a> 
+                    <a href="https://www.tiktok.com/@metronics.medan" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="bi bi-tiktok"></i></a>
+                </div>
+                <div class="rounded-3 overflow-hidden shadow-sm border border-secondary" style="height: 150px; background: #2c3e50;">
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.1234567890!2d98.7111035!3d3.5593806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303130f3251cce63%3A0x4ec2667c7830fca8!2sMetronics!5e0!3m2!1sid!2sid!4v1705940000000!5m2!1sid!2sid" 
+    width="100%" 
+    height="100%" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade"
+    class="map-dark">
+</iframe>
+                </div>
+            </div>
+        </div>
+        <hr class="opacity-25 mb-4">
+        <p class="small mb-0 opacity-50 text-center">© 2026 Metronics Medan. All Rights Reserved.</p>
+    </div>
+
+    <a href="https://wa.me/6281375366633" class="wa-float" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+        <span class="wa-text">Chat Kami</span>
+    </a>
+</footer>
+<style>
+    /* Biru Tua style */
+    .footer-links a { color: rgba(255,255,255,0.7) !important; text-decoration: none; transition: 0.3s; }
+    .footer-links a:hover { color: #00d4ff !important; padding-left: 5px; }
+
+    /* Dark Mode Map Filter */
+    .map-dark { filter: grayscale(100%) invert(90%) contrast(90%); transition: 0.5s; }
+    .map-dark:hover { filter: grayscale(0%) invert(0%) contrast(100%); }
+
+    /* FIX TOMBOL WA */
+    .wa-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white !important;
+        border-radius: 50px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        text-decoration: none !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 9999;
+    }
+    .wa-float i { font-size: 1.5rem; margin-right: 8px; }
+    .wa-text { font-weight: 600; font-size: 0.9rem; }
+    
+    .social-icon {
+        width: 35px; height: 35px; background: rgba(255,255,255,0.1);
+        color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+        .wa-text { display: none; }
+        .wa-float i { margin-right: 0; }
+    }
+</style>
+<style>
+    /* Biru Tua style */
+    .footer-links a { color: rgba(255,255,255,0.7) !important; text-decoration: none; transition: 0.3s; }
+    .footer-links a:hover { color: #00d4ff !important; padding-left: 5px; }
+
+    /* Dark Mode Map Filter */
+    .map-dark { filter: grayscale(100%) invert(90%) contrast(90%); transition: 0.5s; }
+    .map-dark:hover { filter: grayscale(0%) invert(0%) contrast(100%); }
+
+    /* FIX TOMBOL WA */
+    .wa-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white !important;
+        border-radius: 50px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        text-decoration: none !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 9999;
+    }
+    .wa-float i { font-size: 1.5rem; margin-right: 8px; }
+    .wa-text { font-weight: 600; font-size: 0.9rem; }
+    
+    .social-icon {
+        width: 35px; height: 35px; background: rgba(255,255,255,0.1);
+        color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+        .wa-text { display: none; }
+        .wa-float i { margin-right: 0; }
+    }
+</style>
+<style>
+    /* Biru Tua Navbar/Footer style */
+    .footer-links a {
+        color: rgba(255,255,255,0.7) !important;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .footer-links a:hover {
+        color: #00d4ff !important;
+        padding-left: 5px;
+    }
+    /* Dark Mode Map Filter */
+    .map-dark {
+        filter: grayscale(100%) invert(90%) contrast(90%);
+        transition: 0.5s;
+    }
+    .map-dark:hover {
+        filter: grayscale(0%) invert(0%) contrast(100%);
+    }
+    /* WA Button */
+    .wa-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white !important;
+        border-radius: 50px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        text-decoration: none !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 9999;
+    }
+    .wa-float i { font-size: 1.5rem; margin-right: 8px; }
+    .social-icon {
+        width: 35px; height: 35px; background: rgba(255,255,255,0.1);
+        color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    }
+    @media (max-width: 768px) {
+        .wa-text { display: none; }
+        .wa-float i { margin-right: 0; }
+    }
+</style>
+<style>
+    /* Mengatur warna link di footer */
+    .footer-links a {
+        color: rgba(255,255,255,0.7) !important;
+        transition: 0.3s;
+    }
+    .footer-links a:hover {
+        color: #00d4ff !important;
+        padding-left: 5px;
+    }
+
+    /* Efek Dark Map */
+    .map-dark {
+        filter: grayscale(100%) invert(90%) contrast(90%);
+    }
+
+    /* FIX TOMBOL WA */
+    .wa-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white !important;
+        border-radius: 50px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        text-decoration: none !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 9999;
+        transition: all 0.3s ease;
+    }
+    .wa-float i { font-size: 1.5rem; margin-right: 8px; }
+    .wa-text { font-weight: 600; font-size: 0.9rem; display: inline-block; }
+    .wa-float:hover { transform: scale(1.05); background-color: #128c7e; }
+
+    /* Icons Social */
+    .social-icon {
+        width: 35px; height: 35px;
+        background: rgba(255,255,255,0.1);
+        color: white; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        .wa-text { display: none; }
+        .wa-float { padding: 12px; border-radius: 50%; bottom: 20px; right: 20px; }
+        .wa-float i { margin-right: 0; }
+    }
+</style>
+<!--  AKHIR SECTION 8 Footer-->
+</body>
+</html>
