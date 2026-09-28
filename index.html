@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metronics Medan - Pusat Pelatihan & Jaminan Kerja</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #002D5B; /* Navy Profesional */
+            --accent-color: #00D1B2;  /* Hijau Toska Modern */
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f8f9fa;
+        }
+
+        /* --- NAVBAR STYLING --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-brand img { height: 40px; }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--primary-color) !important;
+            padding: 10px 20px !important;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover Effect for Desktop */
+        @media (min-width: 992px) {
+            .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            .dropdown-menu {
+                display: block;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(15px);
+                transition: all 0.3s ease;
+                border: none;
+                border-radius: 12px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.12); /* Shadow Melayang */
+                padding: 15px;
+                min-width: 280px;
+            }
+        }
+
+        /* Dropdown Item Styling */
+        .dropdown-item {
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .dropdown-item i {
+            font-size: 1.2rem;
+            margin-right: 12px;
+            color: var(--accent-color);
+        }
+
+        .dropdown-item:hover {
+            background-color: #f0f7f6;
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(0,45,91,0.9) 0%, rgba(0,45,91,0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .btn-main {
+            background-color: var(--accent-color);
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 209, 178, 0.3);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 991px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .dropdown-menu {
+                border: 1px solid #eee;
+                box-shadow: none;
+                margin-bottom: 15px;
+            }
+        }
+    /* --- HOVER INTERACTION UNTUK CARD --- */
+#program-unggulan .card {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Transisi halus */
+    cursor: pointer;
+}
+
+#program-unggulan .card:hover {
+    transform: translateY(-12px); /* Kartu naik ke atas */
+    box-shadow: 0 20px 40px rgba(0, 45, 91, 0.15) !important; /* Shadow lebih dalam dan luas */
+    border: 1px solid rgba(0, 209, 178, 0.3) !important; /* Muncul border tipis warna toska */
+}
+
+/* Animasi pada Ikon saat kartu di-hover */
+#program-unggulan .card:hover .icon-box {
+    background-color: var(--accent-color) !important;
+    transition: all 0.3s ease;
+}
+
+#program-unggulan .card:hover .icon-box i {
+    color: white !important; /* Ikon berubah jadi putih saat di-hover */
+}
+
+/* Animasi pada dekorasi ikon transparan di pojok */
+#program-unggulan .card .position-absolute {
+    transition: all 0.5s ease;
+}
+
+#program-unggulan .card:hover .position-absolute {
+    transform: scale(1.1) rotate(-10deg); /* Ikon background membesar sedikit dan miring */
+    opacity: 0.1 !important; /* Sedikit lebih jelas saat di-hover */
+}
+
+/* Efek tombol detail saat kartu di-hover */
+#program-unggulan .card:hover .btn-outline-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+    </style>
+</head>
+<body>
+
+     <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: var(--primary-color);">
+    <img src="img/iconlogo.png" alt="Logo" class="nav-logo me-2">
+    <span>METRONICS</span>
+</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#">Program Jaminan Kerja</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="adminmodern.html"><i class="bi bi-robot"></i> Admin Modern & AI</a></li>
+                        <li><a class="dropdown-item" href="Teknisi.html"><i class="bi bi-tools"></i> Teknisi Laptop & Komputer</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#">Layanan SMK</a>
+                    <ul class="dropdown-menu border-top-accent">
+                        <li><a class="dropdown-item" href="prakrin.html"><i class="bi bi-briefcase"></i> Program Prakerin (PKL)</a></li>
+                        <li><a class="dropdown-item" href="gurutamu.html"><i class="bi bi-person-video3"></i> Guru Tamu Industri</a></li>
+                        <li><a class="dropdown-item" href="Pengawas.html"><i class="bi bi-patch-check"></i> Pengawas Eksternal UKK</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#">Kursus Reguler</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="fbads.html"><i class="bi bi-facebook"></i> Facebook Ads</a></li>
+                        <li><a class="dropdown-item" href="webai.html"><i class="bi bi-code-slash"></i> Web Design AI</a></li>
+                        <li><a class="dropdown-item" href="content.html"><i class="bi bi-camera-reels"></i> Content Creator</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item"><a class="nav-link" href="berita.html">Berita</a></li>
+            </ul>
+            <div class="ms-lg-3">
+                <a href="#" class="btn btn-main">Daftar Sekarang</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 hero-content">
+                    <span class="badge mb-3 px-3 py-2" style="background: var(--accent-color);">Program Unggulan 2026</span>
+                    <h1>Kuasai Skill Digital Masa Depan, Kami Jamin Penempatan Kerja.</h1>
+                    <p class="lead my-4 opacity-75">Lembaga Pelatihan Technical Support di Medan dengan kurikulum berbasis AI. Belajar intensif, lulus langsung penempatan kerja melalui surat perjanjian resmi.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <button class="btn btn-main btn-lg">Mulai Karir Sekarang</button>
+                        <button class="btn btn-outline-light btn-lg rounded-pill px-4">Konsultasi Gratis</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!--  SECTION 2 PROGRAM UNGGULAN-->
+    <section id="program-unggulan" class="py-5">
+        <div class="container py-lg-5">
+            
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" style="color: var(--primary-color);">Program Unggulan Jaminan Kerja</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    Dapatkan keahlian spesifik yang paling dibutuhkan industri saat ini dengan jaminan penempatan kerja tertulis.
+                </p>
+                <div class="mx-auto mt-3" style="width: 80px; height: 4px; background: var(--accent-color); border-radius: 2px;"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm p-4 overflow-hidden position-relative" style="border-radius: 20px; transition: transform 0.3s ease;">
+                        <div class="position-absolute" style="top: -20px; right: -20px; opacity: 0.05; font-size: 150px; color: var(--primary-color);">
+                            <i class="bi bi-robot"></i>
+                        </div>
+                        
+                        <div class="card-body position-relative">
+                            <div class="icon-box mb-4 d-inline-flex align-items-center justify-content-center bg-light rounded-circle" style="width: 70px; height: 70px;">
+                                <i class="bi bi-cpu text-primary fs-1"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3" style="color: var(--primary-color);">Administrasi Perkantoran Modern & AI</h3>
+                            <p class="text-muted mb-4">
+                                Revolusi cara kerja admin konvensional. Kuasai manajemen data digital, otomasi tugas kantor dengan ChatGPT/Gemini, hingga pengolahan laporan cerdas berbasis AI.
+                            </p>
+                            
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Penguasaan Office & AI Tools 2026</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Manajemen Database & Cloud</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Sertifikat Kompetensi Industri</li>
+                            </ul>
+
+                            <a href="adminmodern.html" class="btn btn-outline-primary rounded-pill px-4 fw-bold">Detail Program <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <span class="badge bg-warning text-dark"><i class="bi bi-shield-check me-1"></i> Jaminan Penempatan Kerja</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm p-4 overflow-hidden position-relative" style="border-radius: 20px; transition: transform 0.3s ease;">
+                        <div class="position-absolute" style="top: -20px; right: -20px; opacity: 0.05; font-size: 150px; color: var(--primary-color);">
+                            <i class="bi bi-tools"></i>
+                        </div>
+
+                        <div class="card-body position-relative">
+                            <div class="icon-box mb-4 d-inline-flex align-items-center justify-content-center bg-light rounded-circle" style="width: 70px; height: 70px;">
+                                <i class="bi bi-laptop text-primary fs-1"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3" style="color: var(--primary-color);">Teknisi Laptop & Komputer</h3>
+                            <p class="text-muted mb-4">
+                                Menjadi tenaga ahli hardware profesional. Pelatihan mendalam mulai dari elektronika dasar, perbaikan motherboard, hingga troubleshooting sistem skala perusahaan.
+                            </p>
+                            
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Perbaikan Hardware Tingkat Komponen</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Instalasi & Maintenance Server</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Magang Intensif di Lab Metronics</li>
+                            </ul>
+
+                            <a href="#" class="btn btn-outline-primary rounded-pill px-4 fw-bold">Detail Program <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <span class="badge bg-warning text-dark"><i class="bi bi-shield-check me-1"></i> Jaminan Penempatan Kerja</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--  AKHIR SECTION 2 PROGRAM UNGGULAN-->
+
+<!--  SECTION 3 BUKAN SEKEDAR KURSUS BIASA-->
+<section id="keunggulan" class="py-5" style="background-color: #ffffff;">
+        <div class="container py-lg-5">
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-3" style="color: var(--primary-color);">Lebih Dari Sekadar Kursus Biasa</h2>
+                    <p class="text-muted">Kami memahami bahwa investasi waktu dan biaya Anda sangat berharga. Itulah mengapa Metronics hadir dengan standar jaminan yang nyata.</p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <span class="text-uppercase fw-bold ls-2" style="color: var(--accent-color); letter-spacing: 2px;">Value & Trust</span>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="benefit-card p-4 h-100 shadow-sm border-0" style="border-radius: 15px; background: #fbfcfd;">
+                        <i class="bi bi-briefcase-fill fs-1 mb-3 d-block" style="color: var(--accent-color);"></i>
+                        <h5 class="fw-bold" style="color: var(--primary-color);">Jaminan Penempatan Kerja</h5>
+                        <p class="small text-muted mb-0">Bukan sekadar janji, kami menyalurkan lulusan terbaik langsung ke mitra perusahaan kami di Medan dan sekitarnya.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="benefit-card p-4 h-100 shadow-sm border-0" style="border-radius: 15px; background: #fbfcfd; border: 1px dashed var(--accent-color) !important;">
+                        <i class="bi bi-file-earmark-text-fill fs-1 mb-3 d-block" style="color: var(--accent-color);"></i>
+                        <h5 class="fw-bold" style="color: var(--primary-color);">Surat Perjanjian Resmi</h5>
+                        <p class="small text-muted mb-0">Setiap siswa program unggulan mendapatkan kontrak hitam di atas putih sebagai bukti komitmen jaminan kerja kami.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="benefit-card p-4 h-100 shadow-sm border-0" style="border-radius: 15px; background: #fbfcfd;">
+                        <i class="bi bi-wallet2 fs-1 mb-3 d-block" style="color: var(--accent-color);"></i>
+                        <h5 class="fw-bold" style="color: var(--primary-color);">Biaya Sangat Terjangkau</h5>
+                        <p class="small text-muted mb-0">Pendidikan berkualitas tinggi dengan biaya kompetitif dan sistem pembayaran yang bisa diangsur sesuai kemampuan.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="benefit-card p-4 h-100 shadow-sm border-0" style="border-radius: 15px; background: #fbfcfd;">
+                        <i class="bi bi-gear-wide-connected fs-1 mb-3 d-block" style="color: var(--accent-color);"></i>
+                        <h5 class="fw-bold" style="color: var(--primary-color);">80% Full Praktik</h5>
+                        <p class="small text-muted mb-0">Kurikulum berbasis praktik intensif menggunakan perangkat standar industri terbaru tahun 2026.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="benefit-card p-4 h-100 shadow-sm border-0" style="border-radius: 15px; background: #fbfcfd;">
+                        <i class="bi bi-cpu-fill fs-1 mb-3 d-block" style="color: var(--accent-color);"></i>
+                        <h5 class="fw-bold" style="color: var(--primary-color);">Kurikulum Berbasis AI</h5>
+                        <p class="small text-muted mb-0">Materi yang selalu update dengan teknologi AI (ChatGPT, Gemini, AI Tools) untuk menunjang produktivitas kerja.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="benefit-card p-4 h-100 shadow-sm border-0" style="border-radius: 15px; background: #fbfcfd;">
+                        <i class="bi bi-patch-check-fill fs-1 mb-3 d-block" style="color: var(--accent-color);"></i>
+                        <h5 class="fw-bold" style="color: var(--primary-color);">Sertifikat Kompetensi</h5>
+                        <p class="small text-muted mb-0">Lulusan mendapatkan sertifikat resmi yang diakui oleh dunia industri sebagai bukti keahlian profesional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .benefit-card {
+            transition: all 0.3s ease;
+        }
+        .benefit-card:hover {
+            background-color: var(--primary-color) !important;
+            transform: scale(1.05);
+        }
+        .benefit-card:hover h5, 
+        .benefit-card:hover p {
+            color: #ffffff !important;
+        }
+        .benefit-card:hover i {
+            color: #ffffff !important;
+        }
+    </style>
+
+<!--  AKHIR SECTION 3 BUKAN SEKEDAR KURSUS BIASA-->
+
+<!--  SECTION 4 PROGRAM SOLUSI STRAtEGIS MITRA SMK-->
+<section id="layanan-smk" class="py-5" style="background-color: #f4f7fa;">
+        <div class="container py-lg-5">
+            
+            <div class="row mb-5">
+                <div class="col-lg-8">
+                    <h6 class="text-uppercase fw-bold mb-2" style="color: var(--accent-color); letter-spacing: 1px;">Sinergi Pendidikan & Industri</h6>
+                    <h2 class="fw-bold mb-3" style="color: var(--primary-color);">Solusi Strategis untuk Mitra SMK</h2>
+                    <p class="text-muted">Metronics hadir untuk menjembatani kesenjangan antara kurikulum sekolah dan kebutuhan nyata di dunia industri teknologi.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="smk-card">
+                        <div class="smk-icon">
+                            <i class="bi bi-buildings"></i>
+                        </div>
+                        <h5>Program Prakerin (PKL)</h5>
+                        <p>Tempat magang yang terstruktur bagi siswa SMK jurusan IT. Kami membimbing siswa dengan proyek nyata industri.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="smk-card">
+                        <div class="smk-icon">
+                            <i class="bi bi-person-video3"></i>
+                        </div>
+                        <h5>Program Guru Tamu</h5>
+                        <p>Mendatangkan praktisi ahli Metronics langsung ke kelas untuk membagikan tren teknologi terbaru dan motivasi kerja.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <div class="smk-card highlight-card">
+                        <div class="smk-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h5>Pengawas Eksternal UKK</h5>
+                        <p>Layanan pengujian kompetensi profesional untuk siswa SMK oleh tenaga ahli bersertifikat standar industri.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 p-4 rounded-4 text-center bg-white shadow-sm border border-light">
+                <p class="mb-0 text-muted">Ingin mengundang Metronics ke sekolah Anda? 
+                   <a href="https://wa.me/6281375366633?text=Halo%20Metronics%2C%20saya%20ingin%20mengajukan%20kerjasama%20untuk%20program%20SMK" 
+                      class="fw-bold text-decoration-none ms-2" 
+                      style="color: var(--accent-color);" 
+                      target="_blank">
+                      Hubungi via WhatsApp: 0813-7536-6633 <i class="bi bi-whatsapp"></i>
+                   </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* --- CSS KHUSUS SECTION 4 AGAR HOVER BERJALAN --- */
+        .smk-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease-in-out; /* Durasi animasi */
+            height: 100%;
+            border: 1px solid transparent;
+            position: relative;
+            z-index: 1;
+        }
+
+        .smk-icon i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .smk-card h5 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .smk-card p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* EFEK HOVER UTAMA */
+        .smk-card:hover {
+            transform: translateY(-10px); /* Naik ke atas */
+            box-shadow: 0 15px 30px rgba(0, 45, 91, 0.12); /* Bayangan membesar */
+            border-color: var(--accent-color); /* Garis tepi berubah warna */
+            background-color: #fff;
+        }
+
+        /* EFEK HOVER PADA IKON */
+        .smk-card:hover .smk-icon i {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        /* STYLE KHUSUS KARTU UKK (HIGHLIGHT) */
+        .highlight-card {
+            border-left: 5px solid var(--primary-color) !important;
+        }
+        
+        .highlight-card:hover {
+            border-left: 5px solid var(--accent-color) !important;
+        }
+    </style>
+
+<!--  AKHIR SECTION 4 SOLUSI STRAtEGIS MITRA SMK-->
+
+<!--  SECTION 5 PROGRAM REGULER -->
+<section id="kursus-reguler" class="py-5" style="background-color: #ffffff;">
+        <div class="container py-lg-5">
+            
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-7 text-center">
+                    <h6 class="text-uppercase fw-bold mb-2" style="color: var(--accent-color); letter-spacing: 2px;">Short Courses</h6>
+                    <h2 class="fw-bold mb-3" style="color: var(--primary-color);">Tingkatkan Skill dalam Waktu Singkat</h2>
+                    <p class="text-muted">Program pelatihan intensif bagi profesional dan pelaku bisnis untuk menguasai teknologi digital terkini.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="reguler-card border-0 shadow-sm h-100 overflow-hidden">
+                        <div class="reguler-img-box position-relative">
+                            <div class="category-tag">Marketing</div>
+                            <div class="reguler-icon-float">
+                                <i class="bi bi-facebook"></i>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="fw-bold" style="color: var(--primary-color);">Facebook & IG Ads Masterclass</h5>
+                            <p class="text-muted small">Kuasai strategi periklanan digital untuk meningkatkan penjualan bisnis Anda secara signifikan.</p>
+                            <hr class="my-3 opacity-25">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-dark border"><i class="bi bi-clock me-1"></i> 4 Sesi</span>
+                                <a href="https://wa.me/6281375366633" class="text-decoration-none fw-bold" style="color: var(--accent-color);">Daftar <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="reguler-card border-0 shadow-sm h-100 overflow-hidden">
+                        <div class="reguler-img-box position-relative bg-soft-primary">
+                            <div class="category-tag">Development</div>
+                            <div class="reguler-icon-float">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="fw-bold" style="color: var(--primary-color);">Web Design with AI Tools</h5>
+                            <p class="text-muted small">Cara cepat membangun website profesional dan responsif menggunakan bantuan teknologi AI terbaru.</p>
+                            <hr class="my-3 opacity-25">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-dark border"><i class="bi bi-clock me-1"></i> 6 Sesi</span>
+                                <a href="https://wa.me/6281375366633" class="text-decoration-none fw-bold" style="color: var(--accent-color);">Daftar <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <div class="reguler-card border-0 shadow-sm h-100 overflow-hidden">
+                        <div class="reguler-img-box position-relative bg-soft-accent">
+                            <div class="category-tag">Creative</div>
+                            <div class="reguler-icon-float">
+                                <i class="bi bi-camera-reels"></i>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="fw-bold" style="color: var(--primary-color);">Content Creator Masterclass</h5>
+                            <p class="text-muted small">Pelajari teknik editing video, storytelling, dan strategi viral di TikTok, Instagram, serta YouTube.</p>
+                            <hr class="my-3 opacity-25">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-dark border"><i class="bi bi-clock me-1"></i> 5 Sesi</span>
+                                <a href="https://wa.me/6281375366633" class="text-decoration-none fw-bold" style="color: var(--accent-color);">Daftar <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* --- CSS KHUSUS SECTION 5 --- */
+        .reguler-card {
+            background: #ffffff;
+            border-radius: 18px;
+            transition: all 0.4s ease;
+            border: 1px solid #f0f0f0 !important;
+        }
+
+        .reguler-img-box {
+            height: 120px;
+            background: linear-gradient(135deg, #002D5B 0%, #0056b3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .reguler-icon-float {
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* --- HOVER EFFECT --- */
+        .reguler-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 45, 91, 0.1) !important;
+            border-color: var(--accent-color) !important;
+        }
+
+        .reguler-card:hover .reguler-img-box {
+            background: var(--accent-color);
+            transition: all 0.4s ease;
+        }
+
+        .reguler-card:hover .reguler-icon-float {
+            transform: scale(1.1) rotate(5deg);
+            transition: all 0.4s ease;
+        }
+    </style>
+
+<!--  AKHIR SECTION 5 REGULER-->
+<!--  SECTION 6 PROGRAM BERITA -->
+<section id="berita" class="py-5" style="background-color: #f9fbfd;">
+        <div class="container py-lg-5">
+            
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
+                <div class="mb-3 mb-md-0">
+                    <h6 class="text-uppercase fw-bold mb-2" style="color: var(--accent-color); letter-spacing: 2px;">Update</h6>
+                    <h2 class="fw-bold mb-0" style="color: var(--primary-color);">Kabar & Kegiatan Terbaru</h2>
+                </div>
+                <div>
+                    <a href="#" class="btn btn-outline-primary rounded-pill px-4">Lihat Semua Berita <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <article class="news-card bg-white shadow-sm overflow-hidden h-100">
+                        <div class="news-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80" alt="UKK SMK" class="img-fluid">
+                            <div class="news-date">20 Jan 2026</div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="fw-bold mb-3">
+                                <a href="#" class="text-decoration-none" style="color: var(--primary-color);">Metronics Menjadi Pengawas Eksternal UKK di SMK Medan</a>
+                            </h5>
+                            <p class="text-muted small mb-0">Tim ahli Metronics hadir memberikan penilaian standar industri kepada siswa jurusan TKJ untuk memastikan kesiapan kerja...</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <article class="news-card bg-white shadow-sm overflow-hidden h-100">
+                        <div class="news-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?auto=format&fit=crop&q=80" alt="Workshop AI" class="img-fluid">
+                            <div class="news-date">15 Jan 2026</div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="fw-bold mb-3">
+                                <a href="#" class="text-decoration-none" style="color: var(--primary-color);">Workshop Intensif: Implementasi AI untuk Admin Perkantoran</a>
+                            </h5>
+                            <p class="text-muted small mb-0">Keseruan workshop minggu lalu yang diikuti oleh puluhan peserta yang antusias mempelajari otomasi laporan menggunakan AI...</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <article class="news-card bg-white shadow-sm overflow-hidden h-100">
+                        <div class="news-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80" alt="Teknisi Laptop" class="img-fluid">
+                            <div class="news-date">10 Jan 2026</div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="fw-bold mb-3">
+                                <a href="#" class="text-decoration-none" style="color: var(--primary-color);">Kunjungan Industri: Menyiapkan Lulusan Teknisi yang Kompeten</a>
+                            </h5>
+                            <p class="text-muted small mb-0">Metronics Medan melakukan kunjungan rutin ke mitra perusahaan IT untuk memantau perkembangan alumni yang sudah bekerja...</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* --- CSS KHUSUS SECTION 6: BERITA --- */
+        .news-card {
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            border: 1px solid #edf2f7;
+        }
+
+        .news-img-wrapper {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .news-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .news-date {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        /* --- HOVER EFFECTS --- */
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 45, 91, 0.1) !important;
+        }
+
+        .news-card:hover img {
+            transform: scale(1.1); /* Efek Zoom Gambar */
+        }
+
+        .news-card h5 a:hover {
+            color: var(--accent-color) !important;
+        }
+    </style>
+
+<!--  AKHIR SECTION 6 BERITA-->
+<!--  SECTION 7 TESTIMONI -->
+<section id="testimoni-alumni" class="py-5" style="background-color: #ffffff;">
+        <div class="container py-lg-5">
+            
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase fw-bold mb-2" style="color: var(--accent-color); letter-spacing: 2px;">Bukti Nyata</h6>
+                <h2 class="fw-bold" style="color: var(--primary-color);">Kisah Sukses Alumni Metronics</h2>
+                <div class="mx-auto mt-3" style="width: 60px; height: 4px; background: var(--accent-color); border-radius: 2px;"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="alumni-card-mini shadow-sm bg-white border-0 overflow-hidden">
+                        <div class="d-flex align-items-center p-3">
+                            <div class="alumni-img-wrapper">
+                                <img src="img/agus_klinik.jpg" alt="Alumni 1">
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="fw-bold mb-0 text-primary-dark">Muhammad Agus Mustafa</h6>
+                                <small class="text-accent fw-bold" style="color: var(--accent-color);">Owner Klinik Com,Medan</small>
+                            </div>
+                        </div>
+                        <div class="px-3 pb-3">
+                            <p class="text-muted fst-italic mb-0 small" style="font-size: 0.85rem;">"Pelatihan Teknis dan Pengalaman Kerja Dari Metronics,Menjadi Modal Utama Saya Dalam Memulai Usaha saya Klinik Com Medan."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="alumni-card-mini shadow-sm bg-white border-0 overflow-hidden">
+                        <div class="d-flex align-items-center p-3">
+                            <div class="alumni-img-wrapper">
+                                <img src="img/dimas.jpg" alt="Alumni 2">
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="fw-bold mb-0 text-primary-dark">Dimas Sihotang</h6>
+                                <small class="text-accent fw-bold" style="color: var(--accent-color);">PT.Teknokindo,Jakarta</small>
+                            </div>
+                        </div>
+                        <div class="px-3 pb-3">
+                            <p class="text-muted fst-italic mb-0 small" style="font-size: 0.85rem;">Skill dan bimbingan Instruktur di Metronics, Sangat membantu saya memulai karier saya."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="alumni-card-mini shadow-sm bg-white border-0 overflow-hidden">
+                        <div class="d-flex align-items-center p-3">
+                            <div class="alumni-img-wrapper">
+                                <img src="img/dira.jpg" alt="Alumni 3">
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="fw-bold mb-0 text-primary-dark">Dira Putri Gusmidila</h6>
+                                <small class="text-accent fw-bold" style="color: var(--accent-color);">Bengkel Notebook,Medan</small>
+                            </div>
+                        </div>
+                        <div class="px-3 pb-3">
+                            <p class="text-muted fst-italic mb-0 small" style="font-size: 0.85rem;">"Teknik FB Ads yang diajarkan benar-benar meningkatkan omzet."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="alumni-card-mini shadow-sm bg-white border-0 overflow-hidden">
+                        <div class="d-flex align-items-center p-3">
+                            <div class="alumni-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80" alt="Alumni 4">
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="fw-bold mb-0 text-primary-dark">Andi Wijaya</h6>
+                                <small class="text-accent fw-bold" style="color: var(--accent-color);">Teknisi Senior</small>
+                            </div>
+                        </div>
+                        <div class="px-3 pb-3">
+                            <p class="text-muted fst-italic mb-0 small" style="font-size: 0.85rem;">"Ilmu perbaikan motherboard-nya sangat detail dan praktis."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="alumni-card-mini shadow-sm bg-white border-0 overflow-hidden">
+                        <div class="d-flex align-items-center p-3">
+                            <div class="alumni-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80" alt="Alumni 5">
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="fw-bold mb-0 text-primary-dark">Linda Astuti</h6>
+                                <small class="text-accent fw-bold" style="color: var(--accent-color);">Content Creator</small>
+                            </div>
+                        </div>
+                        <div class="px-3 pb-3">
+                            <p class="text-muted fst-italic mb-0 small" style="font-size: 0.85rem;">"Dari nol sampai bisa bikin konten viral, Metronics terbaik!"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="alumni-card-mini shadow-sm bg-white border-0 overflow-hidden">
+                        <div class="d-flex align-items-center p-3">
+                            <div class="alumni-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80" alt="Alumni 6">
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="fw-bold mb-0 text-primary-dark">Fandi Ahmad</h6>
+                                <small class="text-accent fw-bold" style="color: var(--accent-color);">Web Developer</small>
+                            </div>
+                        </div>
+                        <div class="px-3 pb-3">
+                            <p class="text-muted fst-italic mb-0 small" style="font-size: 0.85rem;">"Bikin web dengan AI jadi sangat mudah setelah ikut kelas ini."</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* --- CSS KHUSUS ALUMNI MINI CARDS --- */
+        .alumni-card-mini {
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0 !important;
+        }
+
+        .alumni-img-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid var(--accent-color);
+        }
+
+        .alumni-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text-primary-dark {
+            color: var(--primary-color);
+        }
+
+        /* --- HOVER EFFECT --- */
+        .alumni-card-mini:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 45, 91, 0.08) !important;
+            border-color: var(--accent-color) !important;
+            background-color: #fbfdff;
+        }
+
+        .alumni-card-mini:hover .alumni-img-wrapper {
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+    </style>
+
+<!--  AKHIR SECTION 7 TESTIMONI-->
+<!--  SECTION 8 Footer -->
+<footer class="pt-5 pb-3" style="background-color: #0a192f; color: #ffffff;">
+    <div class="container">
+        <div class="row g-4 mb-5">
+            
+            <div class="col-lg-4">
+                <h4 class="fw-bold mb-4 text-white">METRONICS</h4>
+                <p class="opacity-75 mb-4" style="font-size: 0.9rem; line-height: 1.8;">
+                    LEMBAGA PELATIHN UNGGULAN DI MEDAN.<br>
+                    DILATIH - PUNYA SKILL - DI SALURKAN KERJA
+                </p>
+                <div class="d-flex align-items-start mb-3">
+                    <i class="bi bi-geo-alt-fill me-3 text-info"></i>
+                    <a href="https://maps.app.goo.gl/Ne64CpDKuHkAJhiJ8" target="_blank" class="text-decoration-none text-white opacity-75 small">
+                        Jl. Air Bersih Ujung No.22A, Kota Medan, Sumatera Utara
+                    </a>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-whatsapp me-3 text-info"></i>
+                    <p class="small mb-0 opacity-75">0813-7536-6633</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+                <h6 class="fw-bold mb-4 text-white">Program</h6>
+                <ul class="list-unstyled footer-links">
+                    <li class="mb-2"><a href="adminmodern.html" class="text-decoration-none">Admin Modern & AI</a></li>
+                    <li class="mb-2"><a href="Teknisi.html" class="text-decoration-none">Teknisi Laptop</a></li>
+                    <li class="mb-2"><a href="reguler.html" class="text-decoration-none">Kelas Reguler</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+                <h6 class="fw-bold mb-4 text-white">Mitra SMK</h6>
+                <ul class="list-unstyled footer-links">
+                    <li class="mb-2"><a href="prakrin.html" class="text-decoration-none">Prakerin (PKL)</a></li>
+                    <li class="mb-2"><a href="gurutamu.html" class="text-decoration-none">Guru Tamu</a></li>
+                    <li class="mb-2"><a href="Pengawas.html" class="text-decoration-none">Pengawas UKK</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+                <h6 class="fw-bold mb-4 text-white">Ikuti Kami & Lokasi</h6>
+                <div class="d-flex gap-3 mb-4">
+                    <a href="https://www.instagram.com/metronics_medan/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+                    <a href="https://web.facebook.com/metronics.medan" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a> 
+                    <a href="https://www.tiktok.com/@metronics.medan" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="bi bi-tiktok"></i></a>
+                </div>
+                <div class="rounded-3 overflow-hidden shadow-sm border border-secondary" style="height: 150px; background: #2c3e50;">
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.1234567890!2d98.7111035!3d3.5593806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303130f3251cce63%3A0x4ec2667c7830fca8!2sMetronics!5e0!3m2!1sid!2sid!4v1705940000000!5m2!1sid!2sid" 
+    width="100%" 
+    height="100%" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade"
+    class="map-dark">
+</iframe>
+                </div>
+            </div>
+        </div>
+        <hr class="opacity-25 mb-4">
+        <p class="small mb-0 opacity-50 text-center">© 2026 Metronics Medan. All Rights Reserved.</p>
+    </div>
+
+    <a href="https://wa.me/6281375366633" class="wa-float" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+        <span class="wa-text">Chat Kami</span>
+    </a>
+</footer>
+<style>
+    /* Biru Tua style */
+    .footer-links a { color: rgba(255,255,255,0.7) !important; text-decoration: none; transition: 0.3s; }
+    .footer-links a:hover { color: #00d4ff !important; padding-left: 5px; }
+
+    /* Dark Mode Map Filter */
+    .map-dark { filter: grayscale(100%) invert(90%) contrast(90%); transition: 0.5s; }
+    .map-dark:hover { filter: grayscale(0%) invert(0%) contrast(100%); }
+
+    /* FIX TOMBOL WA */
+    .wa-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white !important;
+        border-radius: 50px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        text-decoration: none !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 9999;
+    }
+    .wa-float i { font-size: 1.5rem; margin-right: 8px; }
+    .wa-text { font-weight: 600; font-size: 0.9rem; }
+    
+    .social-icon {
+        width: 35px; height: 35px; background: rgba(255,255,255,0.1);
+        color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+        .wa-text { display: none; }
+        .wa-float i { margin-right: 0; }
+    }
+</style>
+<style>
+    /* Biru Tua style */
+    .footer-links a { color: rgba(255,255,255,0.7) !important; text-decoration: none; transition: 0.3s; }
+    .footer-links a:hover { color: #00d4ff !important; padding-left: 5px; }
+
+    /* Dark Mode Map Filter */
+    .map-dark { filter: grayscale(100%) invert(90%) contrast(90%); transition: 0.5s; }
+    .map-dark:hover { filter: grayscale(0%) invert(0%) contrast(100%); }
+
+    /* FIX TOMBOL WA */
+    .wa-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white !important;
+        border-radius: 50px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        text-decoration: none !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 9999;
+    }
+    .wa-float i { font-size: 1.5rem; margin-right: 8px; }
+    .wa-text { font-weight: 600; font-size: 0.9rem; }
+    
+    .social-icon {
+        width: 35px; height: 35px; background: rgba(255,255,255,0.1);
+        color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+        .wa-text { display: none; }
+        .wa-float i { margin-right: 0; }
+    }
+</style>
+<style>
+    /* Biru Tua Navbar/Footer style */
+    .footer-links a {
+        color: rgba(255,255,255,0.7) !important;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .footer-links a:hover {
+        color: #00d4ff !important;
+        padding-left: 5px;
+    }
+    /* Dark Mode Map Filter */
+    .map-dark {
+        filter: grayscale(100%) invert(90%) contrast(90%);
+        transition: 0.5s;
+    }
+    .map-dark:hover {
+        filter: grayscale(0%) invert(0%) contrast(100%);
+    }
+    /* WA Button */
+    .wa-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white !important;
+        border-radius: 50px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        text-decoration: none !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 9999;
+    }
+    .wa-float i { font-size: 1.5rem; margin-right: 8px; }
+    .social-icon {
+        width: 35px; height: 35px; background: rgba(255,255,255,0.1);
+        color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    }
+    @media (max-width: 768px) {
+        .wa-text { display: none; }
+        .wa-float i { margin-right: 0; }
+    }
+</style>
+<style>
+    /* Mengatur warna link di footer */
+    .footer-links a {
+        color: rgba(255,255,255,0.7) !important;
+        transition: 0.3s;
+    }
+    .footer-links a:hover {
+        color: #00d4ff !important;
+        padding-left: 5px;
+    }
+
+    /* Efek Dark Map */
+    .map-dark {
+        filter: grayscale(100%) invert(90%) contrast(90%);
+    }
+
+    /* FIX TOMBOL WA */
+    .wa-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white !important;
+        border-radius: 50px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        text-decoration: none !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 9999;
+        transition: all 0.3s ease;
+    }
+    .wa-float i { font-size: 1.5rem; margin-right: 8px; }
+    .wa-text { font-weight: 600; font-size: 0.9rem; display: inline-block; }
+    .wa-float:hover { transform: scale(1.05); background-color: #128c7e; }
+
+    /* Icons Social */
+    .social-icon {
+        width: 35px; height: 35px;
+        background: rgba(255,255,255,0.1);
+        color: white; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        .wa-text { display: none; }
+        .wa-float { padding: 12px; border-radius: 50%; bottom: 20px; right: 20px; }
+        .wa-float i { margin-right: 0; }
+    }
+</style>
+<!--  AKHIR SECTION 8 Footer-->
+
+</body>
+</html>
